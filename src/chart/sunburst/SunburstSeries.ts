@@ -81,7 +81,7 @@ export interface SunburstSeriesNodeItemOption extends
     StatesOptionMixin<SunburstStateOption<CallbackDataParams>, SunburstStatesMixin>,
     OptionDataItemObject<OptionDataValue>
 {
-    nodeClick?: 'rootToNode' | 'link'
+    nodeClick?: 'rootToNode' | 'link' | false
     // Available when nodeClick is link
     link?: string
     target?: string
@@ -138,7 +138,7 @@ export interface SunburstSeriesOption extends
      */
     // highlightPolicy?: 'descendant' | 'ancestor' | 'self'
 
-    nodeClick?: 'rootToNode' | 'link'
+    nodeClick?: 'rootToNode' | 'link' | false
 
     renderLabelForZeroData?: boolean
 
@@ -238,7 +238,7 @@ class SunburstSeriesModel extends SeriesModel<SunburstSeriesOption> {
             rotate: 'radial',
             show: true,
             opacity: 1,
-            // 'left' is for inner side of inside, and 'right' is for outter
+            // 'left' is for inner side of inside, and 'right' is for outer
             // side for inside
             align: 'center',
             position: 'inside',
@@ -269,7 +269,7 @@ class SunburstSeriesModel extends SeriesModel<SunburstSeriesOption> {
             }
         },
 
-        // Animation type canbe expansion, scale
+        // Animation type can be expansion, scale.
         animationType: 'expansion',
         animationDuration: 1000,
         animationDurationUpdate: 500,

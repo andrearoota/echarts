@@ -31,7 +31,7 @@ import { getECData } from '../../util/innerStore';
 import { getSectorCornerRadius } from '../helper/pieHelper';
 import {createOrUpdatePatternFromDecal} from '../../util/decal';
 import ExtensionAPI from '../../core/ExtensionAPI';
-import { saveOldStyle } from '../../animation/basicTrasition';
+import { saveOldStyle } from '../../animation/basicTransition';
 
 const DEFAULT_SECTOR_Z = 2;
 const DEFAULT_TEXT_Z = 4;
@@ -116,7 +116,7 @@ class SunburstPiece extends graphic.Sector {
         if (firstCreate) {
             sector.setShape(sectorShape);
             sector.shape.r = layout.r0;
-            graphic.updateProps(
+            graphic.initProps(
                 sector,
                 {
                     shape: {
